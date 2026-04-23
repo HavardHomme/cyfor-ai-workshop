@@ -1,14 +1,52 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+/* ─── Forsvaret font faces ─────────────────────────────────────────────── */
+@font-face {
+  font-family: "Forsvaret";
+  src: url("/fonts/FORSLGT.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: "Forsvaret";
+  src: url("/fonts/FORSMED.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Forsvaret";
+  src: url("/fonts/FORSBLD.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Tailwind v4 theme tokens ─────────────────────────────────────────── */
+@theme {
+  /* Typography */
+  --font-sans: "Forsvaret", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Forsvaret brand colors */
+  --color-fors-green:      #253722;  /* primary military green */
+  --color-fors-green-dark: #0D1F0D;  /* near-black green — headers, hover states */
+  --color-fors-green-mid:  #3A5C34;  /* lighter green — secondary surfaces */
+  --color-fors-sand:       #F5F2EC;  /* off-white/parchment — page background */
+  --color-fors-khaki:      #DDD8CC;  /* muted khaki — borders, dividers */
+  --color-fors-text:       #1A1A14;  /* near-black — body text */
+  --color-fors-muted:      #5A5A4A;  /* muted olive — secondary text */
+  --color-fors-danger:     #8B1A1A;  /* deep red — errors/destructive actions */
+}
+
+/* ─── Base styles ──────────────────────────────────────────────────────── */
 :root {
-  color: #0f172a;
-  background-color: #f8fafc;
+  color: #1A1A14;
+  background-color: #F5F2EC;
   font-family: var(--font-sans);
+  letter-spacing: 0.01em;
 }
 
 * {
@@ -25,5 +63,5 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #f8fafc;
+  background-color: #F5F2EC;
 }
